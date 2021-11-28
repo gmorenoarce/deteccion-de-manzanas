@@ -1,0 +1,10 @@
+#Entrenar Faster RCNN
+python3 train_rcnn.py --data_path /home/matiasmoreno/ProyectoML/data --model frcnn --epochs 50 --output-dir /home/matiasmoreno/ProyectoML/resultados
+ 
+#Entrenar Masked RCNN
+python3 train_rcnn.py --data_path /home/matiasmoreno/ProyectoML/data --model mrcnn --epochs 50 --output-dir /home/matiasmoreno/ProyectoML/resultados
+ 
+#Levantar venv en Jupyter
+	screen -S torch
+	conda activane frcnn
+	jupyter lab --no-browser --port=8889
