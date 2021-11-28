@@ -1,10 +1,6 @@
 # MinneApple: A Benchmark Dataset for Apple Detection and Segmentation
 Este codigo se trabajo bajo el proyecto original del articulo [paper](https://arxiv.org/abs/1909.06441) MinneApple: A Benchmark Dataset for Apple Detection and Segmentation. Aqui se encuentran trabajados modelos para leer el dataset original  y entrenar en base a este a modelos Faster RCNN y Mask RCNN con un enfoque en el reconocimiento de manzanas.
 
-<p align="center">
-	<img src="./imgs/concept.png" width="400">
-</p>
-
 ## Resultados Originales
 Los resultados a continuacion son del 1 Noviembre de 2019 que se dejan con el objetivo de hacer una comparativa con los resultados obtenidos.
 
@@ -36,7 +32,7 @@ pip install Pillow opencv-python sklearn numpy
 El archivo ```data/apple_dataset.py``` es un archivo original del proyecto base que tiene una clase personalizada del dataset que permite cargar imagenes y masks sin complicaciones, extrae bounding boxes y masks de segmentacion. Se recomienda revisar las direcciones de carpetas en el archivo ya que pueden causar problemas con la maquina.
 
 ## Dataset
-Para entrenar los modelos se necesita descargar el dataset, de preferencia seria el original pero debido a que este no se encuentra abierto al publico de manera rapida se recomienda la version modificada para acceso al publico que es mas pequena y no cuenta con todos los masks desde aqui [here](https://conservancy.umn.edu/handle/11299/206575).
+Para entrenar los modelos se necesita descargar el dataset, de preferencia seria el original pero debido a que este no se encuentra abierto al publico de manera rapida se recomienda la version modificada para acceso al publico que es mas pequena y no cuenta con todos los masks desde aqui [here](https://drive.google.com/drive/folders/1IWRPyXBwMcblBzQaxPB6ZaRWYTMJ6O8z?usp=sharing) donde tambien estan incluidos algunos modelos entrenados para este proyecto para faster rcnn y mask rcnn.
 
 ## Entrenamiento
 * A continuacion se dejan los comandos para ejecutar los modelos para entrenar desde la consola.
@@ -51,4 +47,7 @@ La cantidad de epochs originales que se dicen se utilizaron en el proyecto base 
 
 ## Resultados Obtenidos
 
-
+| Metodo | Backbone | AP @ IoU=.50:.05:.95 | AP @ IoU=.50  |  AP @ IoU=.74 | AP_small | AP_medium | AP_large|
+|---|---|---|---|---|---|---|---|
+| Faster RCNN  |  ResNet50 |  0.329 |  0.68 | 0.285  | 0.255  | 0.527  | -1  |
+| Mask RCNN  | ResNet50  | 0.343 |  0.716 | 0.293  | 0.278 | 0.529  |  -1 |
